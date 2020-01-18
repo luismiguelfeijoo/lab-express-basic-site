@@ -2,8 +2,9 @@
   "name": "starter-code",
   "version": "1.0.0",
   "description": "",
-  "main": "nodemon app.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon --ext js,hbs,json app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
