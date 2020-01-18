@@ -9,9 +9,8 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.use("/static", express.static(__dirname + "/public"));
 
-
 app.get('/', (request, response) => {
-  response.render("home");
+  response.render("home", {personajes});
 });
 
 const port = 3000;
