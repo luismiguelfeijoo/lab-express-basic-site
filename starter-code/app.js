@@ -5,6 +5,9 @@ const app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 
+//app.use("/scripts", express.static(__dirname + "/scripts"));
+const data = require("./scripts/data.js")
+
 hbs.registerPartials(__dirname + "/views/partials");
 
 app.use("/static", express.static(__dirname + "/public"));
