@@ -7,7 +7,7 @@ app.set("view engine", "hbs");
 
 //app.use("/scripts", express.static(__dirname + "/scripts"));
 const data = require("./scripts/data.js")
-const imageSearch = require("./scripts/image-search")
+//const imageSearch = require("./scripts/image-search")
 
 //const image = imageSearch.client.search("Harry Potter", imageSearch.options).then( (images) => images).catch(error => console.log(error))
 
@@ -19,16 +19,16 @@ const sw = data.sw.then( (result) => result)
 
 //hbs.registerPartials(__dirname + "/views/partials");
 
-app.use("/static", express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 
 app.get('/', (request, response) => {
   //response.send(imageSearch.client.search("Harry Potter", imageSearch.options).then( (images) => img = images).catch(error => console.log(error)) )
-  const pokemon = data.pokemon.then( (result) => {
+  /*const pokemon = data.pokemon.then( (result) => {
     console.log(result)
     response.render("home", {pokemon:result[0]});
-  })
+  })*/
   
-  //response.render("home")
+  response.render("home")
 });
 
 const port = 3000;
