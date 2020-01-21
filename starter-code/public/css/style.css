@@ -1,0 +1,37 @@
+.container {
+  margin: 50px auto;
+  width: 90vw;
+}
+
+.img-container {
+  margin: 50px auto;
+  width: 75vw;
+}
+
+footer {
+  background-color: lightgray ;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 25px;
+  margin: 0;
+  color: white;
+}
+
+p {
+  margin: 0;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.jumbotron {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.jumbotron p {
+  padding: .4em
+}
