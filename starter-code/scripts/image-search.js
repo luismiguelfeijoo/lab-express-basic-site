@@ -4,6 +4,6 @@ const imageSearch = require('image-search-google');
 
 
 module.exports = {
-  client : new imageSearch(`ID`,`API`),
+  client : new imageSearch(process.env.GOOGLE_ID,process.env.GOOGLE_API),
   options : {page: 1}
 }
