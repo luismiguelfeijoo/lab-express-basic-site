@@ -1,0 +1,35 @@
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Random Wiki!</h1>
+    <p class="lead">Do you know every character of one of these sagas?</p>
+    <p>Choose one of the options below to pick a random character and see if you know them all!</p>
+  </div>
+</div>
+
+<div class="img-container">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {{#with first}}
+          <div class="carousel-item active">
+            <a href={{path}}><img src={{url}} class="d-block w-100" alt="..."></a>
+          </div>
+      {{/with}}
+          {{#each rest}}
+            {{#with this}}
+              {{> carousel}}
+            {{/with}}
+          {{/each}}
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
