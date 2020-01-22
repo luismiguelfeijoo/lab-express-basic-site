@@ -3,6 +3,8 @@ const hbs = require("hbs");
 const app = express();
 const dotenv = require('dotenv').config()
 
+const chargeRandom = () => new Promise( (resolve,reject) => resolve()) // try to generate random characters on every call to the server
+
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 
@@ -31,15 +33,13 @@ app.get('/', (request, response) => {
 
 
 app.get('/harrypotter', (request, response) => {
-  const hp = data.hp.then( (result) => {
-    console.log(result[0].full)
+  data.hp.then( (result) => {
     imageSearch.client.search(result[0].full, imageSearch.options).then( (images) => {
-      console.log(images[0])
       response.render("harrypotter", {hp: result[0], image: images[0].url});
     }).catch( () => {
       response.render("harrypotter", {hp: result[0], image: "/public/images/not-found.png"});
     })
-  })
+  }) 
 });
 
 const port = 3000;
