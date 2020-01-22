@@ -31,13 +31,26 @@ app.get('/', (request, response) => {
   response.render("home", series)
 });
 
-
+let j = 0
 app.get('/harrypotter', (request, response) => {
   data.hp.then( (result) => {
-    imageSearch.client.search(result[0].full, imageSearch.options).then( (images) => {
-      response.render("harrypotter", {hp: result[0], image: images[0].url});
+    j++
+    imageSearch.client.search(result[j].full, imageSearch.options).then( (images) => {
+      response.render("harrypotter", {hp: result[j], image: images[0].url});
     }).catch( () => {
-      response.render("harrypotter", {hp: result[0], image: "/public/images/not-found.png"});
+      response.render("harrypotter", {hp: result[j], image: "/public/images/not-found.png"});
+    })
+  }) 
+});
+
+let i = 0
+app.get('/pokemon', (request, response) => {
+  data.pokemon.then( (result) => {
+    i++
+    imageSearch.client.search(result[i].name, imageSearch.options).then( (images) => {
+      response.render("pokemon", {pokemon: result[i], image: images[0].url});
+    }).catch( () => {
+      response.render("pokemon", {pokemon: result[i], image: "/public/images/not-found.png"});
     })
   }) 
 });
