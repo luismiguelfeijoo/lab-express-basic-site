@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/public/css/starwars.css">
+<div id="sw-container"> 
+  <section class="star-wars">
+
+    <div class="crawl">
+{{#with sw}}
+      <div class="title">
+        <p>Meet {{name}}!</p>
+        <h1>A awesomly random character (or not?)</h1>
+        {{/with}}
+        {{#with image}}
+        <img src={{this}}>
+        {{/with}}
+      </div>
+        {{#with sw}}
+        <p>He comes from a galaxy far away, originally from {{homeworld}}.</p>
+        <p>{{birth_year}} is the year of birth of this {{height}} cm tall creature.</p>
+        <p>It has {{eye_color}} eyes and {{hair_color}} hair as you saw.</p>
+        {{/with}}
+        
+    </div>
+
+  </section>
+</div>

@@ -55,6 +55,18 @@ app.get('/pokemon', (request, response) => {
   }) 
 });
 
+let k = 0
+app.get('/starwars', (request, response) => {
+  data.sw.then( (result) => {
+    k++
+    imageSearch.client.search(result[k].name, imageSearch.options).then( (images) => {
+      response.render("starwars", {sw: result[k], image: images[0].url});
+    }).catch( () => {
+      response.render("starwars", {sw: result[k], image: "/public/images/not-found.png"});
+    })
+  }) 
+});
+
 const port = 3000;
 app.listen(port, () => console.log(`Ready on port ${port}`));
 
