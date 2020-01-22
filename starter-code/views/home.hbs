@@ -11,9 +11,11 @@
 <div class="img-container">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
+      {{#with first}}
           <div class="carousel-item active">
-            <a href="#"><img src={{first}} class="d-block w-100" alt="..."></a>
+            <a href={{path}}><img src={{url}} class="d-block w-100" alt="..."></a>
           </div>
+      {{/with}}
           {{#each rest}}
             {{#with this}}
               {{> carousel}}

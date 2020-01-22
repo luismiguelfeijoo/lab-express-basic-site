@@ -35,3 +35,25 @@ p {
 .jumbotron p {
   padding: .4em
 }
+
+#vara-container {
+  margin: auto 10px;
+  width: 80vw;
+}
+
+.frame {
+  width: 100%;
+  background: transparent no-repeat center;
+  background-size: cover;
+}
+
+.hp-img-container {
+  width: 40%;
+  margin: 20px;
+}
+
+.hp-container {
+  justify-content: space-evenly;
+  display: flex;
+  background: url("/public/images/parchment.jpg");
+}
