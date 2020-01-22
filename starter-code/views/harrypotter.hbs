@@ -1,0 +1,67 @@
+<script src="/scripts/vara.js" type="text/javascript"></script>
+
+<div class="hp-container">
+  <div class="hp-img-container">
+    <img src={{image}} class="d-block w-100 frame" alt="...">
+  </div>
+
+  <div id="vara-container"></div>
+</div>
+
+
+
+
+{{#with hp}}
+<script>
+const school = (`{{house}}` == "N/A") ? `I didn't go to Hogwarts` : `I love my house, on {{house}} we're like a family`
+var vara = new Vara (
+  "#vara-container",
+  "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json",
+  [
+    {
+      text: `Hello! My name is  {{full}}` ,
+      fromCurrentPosition: { y: false },
+      duration: 3000
+    },
+    {
+      text: `My blood status is {{blood_status}}`,
+      fromCurrentPosition: { y: false },
+      delay: 3000,
+      duration: 4000
+    },
+    {
+      text: school,
+      fromCurrentPosition: { y: false },
+      delay: 3000,
+      duration: 4500
+    },
+    {
+      text: `I was born in {{birthday}}`,
+      fromCurrentPosition: { y: false },
+      delay: 3000,
+      duration: 1000
+    },
+    {
+      text: `If you're courious I use a {{wand}} wand`,
+      fromCurrentPosition: { y: false },
+      delay: 3000,
+      duration: 4000
+    }
+  ],
+  {
+    textAlign:"center", // String, text align, accepted values are left,center,right
+	  autoAnimation:true, // Boolean, Whether to animate the text automatically
+	  queued:true,
+    fontSize:46,
+    strokeWidth:2
+  });
+{{/with}}
+vara.ready(function(){
+	vara.playAll();
+})
+
+</script>
+
+
+
+
