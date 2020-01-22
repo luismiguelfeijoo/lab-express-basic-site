@@ -1,9 +1,9 @@
 const nerds = require('nerds')
 
 module.exports = {
-  hp :  nerds.resolve('Harry Potter',10).asPromise(),
-  pokemon :  nerds.resolve('Pokemon',10).asPromise(),
-  sw :  nerds.resolve('Star Wars',10).asPromise() 
+  hp :  () => nerds.resolve('Harry Potter',10).asPromise(),
+  pokemon :  () => nerds.resolve('Pokemon',10).asPromise(),
+  sw :  () => nerds.resolve('Star Wars',10).asPromise() 
 }
 
 /*
