@@ -32,8 +32,8 @@ app.get('/', (request, response) => {
 });
 
 app.get('/harrypotter', (request, response) => {
-  data.hp.then( (result) => {
-    imageSearch.client().search(result[0].full, imageSearch.options).then( (images) => {
+  data.hp().then( (result) => {
+    imageSearch.client.search(result[0].full, imageSearch.options).then( (images) => {
       response.render("harrypotter", {hp: result[0], image: images[0].url});
     }).catch( () => {
       response.render("harrypotter", {hp: result[0], image: "/public/images/not-found.png"});
